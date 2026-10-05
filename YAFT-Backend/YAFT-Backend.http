@@ -1,0 +1,47 @@
+@YAFT_Backend_HostAddress = http://localhost:5081
+# Firebase ID token dell'utente (es. ottenuto con accounts:signInWithPassword o da getIdToken() nel client)
+@token = INCOLLA_QUI_IL_FIREBASE_ID_TOKEN
+
+### Senza token -> 401
+GET {{YAFT_Backend_HostAddress}}/api/stocks/AAPL
+
+### Lista titoli disponibili: most_actives | day_gainers | day_losers | trending
+GET {{YAFT_Backend_HostAddress}}/api/stocks?list=most_actives&region=US&count=25
+Authorization: Bearer {{token}}
+
+###
+GET {{YAFT_Backend_HostAddress}}/api/stocks?list=trending&region=IT
+Authorization: Bearer {{token}}
+
+### Ricerca titoli
+GET {{YAFT_Backend_HostAddress}}/api/stocks?q=eni
+Authorization: Bearer {{token}}
+
+### Quotazioni di titoli specifici (max 20)
+GET {{YAFT_Backend_HostAddress}}/api/stocks/quotes?symbols=AAPL,ENI.MI,MSFT,NOPE123
+Authorization: Bearer {{token}}
+
+### Quotazione singola
+GET {{YAFT_Backend_HostAddress}}/api/stocks/ENI.MI
+Authorization: Bearer {{token}}
+
+### Storico prezzi
+GET {{YAFT_Backend_HostAddress}}/api/stocks/AAPL/history?range=1mo&interval=1d
+Authorization: Bearer {{token}}
+
+### Preferiti dell'utente (con quotazioni)
+GET {{YAFT_Backend_HostAddress}}/api/watchlist
+Authorization: Bearer {{token}}
+
+### Aggiungi ai preferiti (201, 409 se già presente, 404 se il titolo non esiste)
+POST {{YAFT_Backend_HostAddress}}/api/watchlist
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{ "symbol": "ENI.MI" }
+
+### Rimuovi dai preferiti (204, 404 se non presente)
+DELETE {{YAFT_Backend_HostAddress}}/api/watchlist/ENI.MI
+Authorization: Bearer {{token}}
+
+###

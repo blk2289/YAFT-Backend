@@ -1,0 +1,16 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/YAFT.Application/YAFT.Application.csproj" />
+    <Project Path="src/YAFT.Domain/YAFT.Domain.csproj" />
+    <Project Path="src/YAFT.Infrastructure/YAFT.Infrastructure.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/YAFT.Application.Tests/YAFT.Application.Tests.csproj" />
+    <Project Path="tests/YAFT.Architecture.Tests/YAFT.Architecture.Tests.csproj" />
+    <Project Path="tests/YAFT.Domain.Tests/YAFT.Domain.Tests.csproj" />
+    <Project Path="tests/YAFT.Infrastructure.Tests/YAFT.Infrastructure.Tests.csproj" />
+  </Folder>
+  <Project Path="YAFT-Backend.AppHost/YAFT-Backend.AppHost.csproj" />
+  <Project Path="YAFT-Backend.ServiceDefaults/YAFT-Backend.ServiceDefaults.csproj" />
+  <Project Path="YAFT-Backend/YAFT-Backend.csproj" />
+</Solution>

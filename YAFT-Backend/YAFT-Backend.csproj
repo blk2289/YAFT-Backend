@@ -1,0 +1,25 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <RootNamespace>YAFT.Api</RootNamespace>
+    <InvariantGlobalization>true</InvariantGlobalization>
+    <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+    <UserSecretsId>fa67af99-c32a-42c7-a77a-e5980d7f3fed</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="10.0.12" />
+    <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="10.0.12" />
+    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.24.2-preview.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\YAFT-Backend.ServiceDefaults\YAFT-Backend.ServiceDefaults.csproj" />
+    <ProjectReference Include="..\src\YAFT.Application\YAFT.Application.csproj" />
+    <ProjectReference Include="..\src\YAFT.Infrastructure\YAFT.Infrastructure.csproj" />
+  </ItemGroup>
+  
+</Project>
